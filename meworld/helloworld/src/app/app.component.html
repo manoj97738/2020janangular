@@ -1,0 +1,15 @@
+<a routerLink="/">Home</a> <br/>
+<a routerLink="/aboutus">aboutus</a><br/>
+<a routerLink="/contact">contact</a><br/>
+<a routerLink="/lazy">lazy</a><br/>
+
+<a routerLink="/dsadasd">Notfounf</a><br/>
+<table>
+  <tr *ngFor="let dt of myData">
+    <td>{{dt.id}}</td>
+    <td>{{dt.name}}</td>
+    <td><button (click)="myclick(dt)">To New contact</button>
+      </td>
+  </tr>
+</table>
+<router-outlet></router-outlet>
