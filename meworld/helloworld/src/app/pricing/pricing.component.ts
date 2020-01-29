@@ -8,7 +8,9 @@ import { MyService } from '../common.service';
 })
 export class PricingComponent implements OnInit {
 
-  constructor(public myserv: MyService) { }
+  constructor(public myserv: MyService) {
+
+  }
 
   ngOnInit() {
     console.log(this.myserv);

@@ -4,7 +4,23 @@
 <a routerLink="/lazy">lazy</a><br/>
 
 <a routerLink="/dsadasd">Notfounf</a><br/>
-<table>
+<h1>{{mySalary}} {{mySalary+1}} {{mySalary}}</h1> 
+<h1>{{title}}</h1>
+<h1>{{title | lowercase}}</h1>
+<h1>{{title | uppercase}}</h1>
+<h1>{{title | titlecase}}</h1>
+<h1>{{title | slice:0:5 | lowercase }}</h1>
+<h1>{{mySalary | number:'15.5-6' }}</h1>
+<h1>{{mySalary | currency:'INR':'symbol':'4.2-2'}}</h1>
+<h1>{{mySalary | currency:'INR':'code':'4.2-2'}}</h1>
+<h1>{{mySalary | percent:'15.5-6' }}</h1>
+<h1>{{dateObj}}</h1>
+<h1>{{ dateObj | date:'medium' }}</h1> 
+<h1>{{ dateObj | date:'dd-MMM-yyyy hh:mm a' }}</h1> 
+<h2>{{myData | json}}</h2>
+<h3>{{ 'Manoj' | shaktimaan:'some'}}</h3>
+
+ <table>
   <tr *ngFor="let dt of myData">
     <td>{{dt.id}}</td>
     <td>{{dt.name}}</td>

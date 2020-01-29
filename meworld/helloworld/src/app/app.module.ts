@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 const myRoute: Routes = [
   { path: '', component: PricingComponent },
@@ -11,18 +12,20 @@ import { AppComponent } from './app.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AppRouterModule } from './router.module';
+import { Mycass } from "./mypoewerpipe";
 @NgModule({
   declarations: [
     AppComponent,
     PricingComponent,
     NotfoundComponent,
+    Mycass
   ],
   imports: [
     BrowserModule,
     AppRouterModule,
     RouterModule.forRoot(myRoute),
   ],
-  providers: [],
+  providers: [DecimalPipe ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
