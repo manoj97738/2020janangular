@@ -12,7 +12,8 @@ import { AppComponent } from './app.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AppRouterModule } from './router.module';
-import { Mycass } from "./mypoewerpipe";
+import { Mycass } from './mypoewerpipe';
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,8 +25,9 @@ import { Mycass } from "./mypoewerpipe";
     BrowserModule,
     AppRouterModule,
     RouterModule.forRoot(myRoute),
+    ReactiveFormsModule, FormsModule,
   ],
-  providers: [DecimalPipe ],
+  providers: [DecimalPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

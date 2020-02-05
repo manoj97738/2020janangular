@@ -1,1 +1,59 @@
 <p>aboutus works!</p>
+<form [formGroup]="loginForm" action="#" (ngSubmit)="myMethod()" method="post">
+
+    <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" formControlName="uname" required>
+        <h1 *ngIf="uname.errors && submit" style="color: red;">
+        <p *ngIf="uname.errors.required">TRhis fi9le dis required</p></h1>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" (mouseenter)="myalert()" placeholder="Enter Password" formControlName="psw" required>
+        <input type="checkbox" placeholder="Enter Password" value="somevalue" formControlName="ckb1" required>
+        <input type="radio" placeholder="Enter Password" value="somevalue" formControlName="edbk1" required>
+        <div formGroupName="address">
+            <input type="text" placeholder="Enter Password" value="" formControlName="line1" required>
+            <input type="text" placeholder="Enter Password" value="" formControlName="pincode" required>
+            <div formGroupName="myaddress">
+                <input type="text" placeholder="Enter Password" value="" formControlName="line1" required>
+                <input type="text" placeholder="Enter Password" value="" formControlName="pincode" required>
+
+            </div>
+        </div>
+        <div formArrayName="items" *ngFor="let item of addItem.controls; let i = index;">
+            <div [formGroupName]="i">
+                <input formControlName="name" placeholder="Item name">
+                <input formControlName="description" placeholder="Item description">
+                <input formControlName="price" placeholder="Item price">
+            </div>
+        </div>
+        <div formArrayName="phonnumbers" *ngFor="let item of phonnumbers.controls; let i = index;">
+            <input [formControlName]="i" placeholder="Item name">
+            
+        </div>
+        <button (click)="addIT()">Add</button>
+        <button (click)="addphonnumbers()">Add</button>
+
+        <button type="submit">Login</button>
+
+    </div>
+</form>
+<form [formGroup]="registerForm" action="#" (ngSubmit)="myMethod()" method="post">
+
+    <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" formControlName="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" (mouseenter)="myalert()" placeholder="Enter Password" formControlName="psw" required>
+        <input type="checkbox" placeholder="Enter Password" value="somevalue" formControlName="ckb1" required>
+        <input type="radio" placeholder="Enter Password" value="somevalue" formControlName="edbk1" required>
+        <div formGroupName="address">
+            <input type="text" placeholder="Enter Password" value="" formControlName="line1" required>
+            <input type="text" placeholder="Enter Password" value="" formControlName="pincode" required>
+
+        </div>
+        <button type="submit">Login</button>
+
+    </div>
+</form>
+https://developer.mozilla.org/en-US/docs/Web/Events

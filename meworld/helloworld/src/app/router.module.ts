@@ -8,6 +8,8 @@ const myRoute: Routes = [
     { path: 'aboutus', component: AboutusComponent }
 
 ];
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+
 import { MyService } from "./common.service";
 @NgModule({
     declarations: [
@@ -16,7 +18,8 @@ import { MyService } from "./common.service";
     ],
     imports: [
         CommonModule,
-        RouterModule.forRoot(myRoute)
+        RouterModule.forRoot(myRoute),
+        ReactiveFormsModule, FormsModule,
 
     ],
     exports: [
