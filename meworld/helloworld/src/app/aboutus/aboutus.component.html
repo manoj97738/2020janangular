@@ -3,18 +3,34 @@
 
     <div class="container">
         <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" formControlName="uname" required>
-        <h1 *ngIf="uname.errors && submit" style="color: red;">
-        <p *ngIf="uname.errors.required">TRhis fi9le dis required</p></h1>
+        <input [class.error]="submit && uname.errors" [ngClass]="errorObj"autocomplete="off"  type="text" placeholder="Enter Username" formControlName="uname" required>
+        <h1 style="color: red;" *ngIf="submit && uname.errors">
+            <span *ngIf="uname.errors.required">This field is required filed</span>
+        </h1>
         <label for="psw"><b>Password</b></label>
-        <input type="password" (mouseenter)="myalert()" placeholder="Enter Password" formControlName="psw" required>
+        <input autocomplete="off"  type="password" (mouseenter)="myalert()" placeholder="Enter Password" formControlName="psw" required>
+        <h1 style="color: rgb(141, 82, 82);" *ngIf="submit && psw.errors">
+            <span *ngIf="psw.errors.required">This field is required filed</span>
+            <span *ngIf="psw.errors.min">This field is required filed</span>
+
+        </h1>
         <input type="checkbox" placeholder="Enter Password" value="somevalue" formControlName="ckb1" required>
         <input type="radio" placeholder="Enter Password" value="somevalue" formControlName="edbk1" required>
         <div formGroupName="address">
             <input type="text" placeholder="Enter Password" value="" formControlName="line1" required>
+            <h1 style="color: rgb(141, 82, 82);" *ngIf="submit && addressLine1.errors">
+                <span *ngIf="addressLine1.errors.required">This field is required filed</span>
+                <span *ngIf="addressLine1.errors.min">This Must be 10 digit length</span>
+    
+            </h1>
             <input type="text" placeholder="Enter Password" value="" formControlName="pincode" required>
             <div formGroupName="myaddress">
                 <input type="text" placeholder="Enter Password" value="" formControlName="line1" required>
+                <h1 style="color: rgb(141, 82, 82);" *ngIf="submit && addressLineInner.errors">
+                    <span *ngIf="addressLineInner.errors.required">This field is required filed</span>
+                    <span *ngIf="addressLineInner.errors.min">This Must be 10 digit length</span>
+        
+                </h1>
                 <input type="text" placeholder="Enter Password" value="" formControlName="pincode" required>
 
             </div>
@@ -27,11 +43,12 @@
             </div>
         </div>
         <div formArrayName="phonnumbers" *ngFor="let item of phonnumbers.controls; let i = index;">
-            <input [formControlName]="i" placeholder="Item name">
+            <input [formControlName]="i" placeholder="Item name" #mycontrol>
+            {{mycontrol.error | json}}
             
         </div>
         <button (click)="addIT()">Add</button>
-        <button (click)="addphonnumbers()">Add</button>
+        <button type="button"(click)="addphonnumbers()">Add Phone</button>
 
         <button type="submit">Login</button>
 

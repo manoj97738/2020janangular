@@ -14,6 +14,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { AppRouterModule } from './router.module';
 import { Mycass } from './mypoewerpipe';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
     AppRouterModule,
     RouterModule.forRoot(myRoute),
     ReactiveFormsModule, FormsModule,
+    HttpClientModule
   ],
   providers: [DecimalPipe],
   bootstrap: [AppComponent]

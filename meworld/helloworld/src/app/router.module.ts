@@ -11,6 +11,7 @@ const myRoute: Routes = [
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 import { MyService } from "./common.service";
+import { MyInjectabelService } from './aboutus/myinjectbale.service';
 @NgModule({
     declarations: [
         ContactComponent,
@@ -28,7 +29,8 @@ import { MyService } from "./common.service";
         AboutusComponent
     ],
     providers: [
-        MyService
+        MyService,
+        MyInjectabelService
     ]
 })
 export class AppRouterModule { }

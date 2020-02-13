@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MyService } from "../common.service";
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -9,7 +9,7 @@ import { MyService } from "../common.service";
 })
 export class ContactComponent implements OnInit {
 
-  constructor(public route: ActivatedRoute, public router: Router, public myserv: MyService) { }
+  constructor(public http: HttpClient, public route: ActivatedRoute, public router: Router, public myserv: MyService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((data) => {
